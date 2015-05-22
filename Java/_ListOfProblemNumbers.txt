@@ -5,5 +5,11 @@
 67:  Add Binary
 78:  Subsets
 79:  Word Search
+86:  Partition List
+88:  Merge Sorted Array
 90:  Subsets II
+118: Pascal's Triangle
+119: Pascal's Triangle II
+139: Word Break
+198: House Robber
 212: Word Search II
