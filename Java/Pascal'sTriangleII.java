@@ -16,10 +16,10 @@ public class Solution {
         
         for(int i = 1; i < rowIndex/2 + 1; i++){//Calculate the next binomail coefficent in terms of the previous coefficent.
             int temp = binomCoeff[i-1];//Get the last coefficent
-            if(i < 10){//To avoid overflow/underflow the order of operations matter.
+            if(i < 10){//To avoid overflow the order of operations matter.
                 binomCoeff[i] = temp*(rowIndex - i + 1 )/i;//The new coefficent.
             }
-            else{//To avoid overflow/underflow the order of operations matter.
+            else{//To avoid overflow, the order of operations matter.
                 binomCoeff[i] = (int)((rowIndex -i+1)*((double)temp/i));
             }
             row.add(binomCoeff[i]);//Add the current coefficent ot the list.
