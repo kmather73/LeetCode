@@ -1,4 +1,4 @@
-//Same code as subsets 1 works.
+//Same code as subsets.java works.
 public class Solution {
     public List<List<Integer>> subsets(int[] S) {
         HashSet<List<Integer>> someSubsets = subsets(S, 0);//Call the wrapper function.
