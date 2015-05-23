@@ -11,6 +11,8 @@
 118: Pascal's Triangle
 119: Pascal's Triangle II
 139: Word Break
+153: Find Minimum in Rotated Sorted Array
 198: House Robber
 212: Word Search II
 213: House Robber II
+215: Kth Largest Element in an Array
