@@ -16,7 +16,7 @@ public:
 
         for(int i = 0; i!= s.length(); ++i){
             int temp = s.at(i);
-            if(index[temp]<start ){//Have we seen this character before relvtive to the starting positon of our subsequence?
+            if(index[temp]<start ){//Have we seen this character before relative to the starting positon of our subsequence?
                 length = fmax(length, i - start + 1); //update length if needed.
             }
             else if(index[temp] >= start){
