@@ -17,6 +17,7 @@
 86:  Partition List
 88:  Merge Sorted Array
 90:  Subsets II
+94:  Binary Tree Inorder Traversal
 118: Pascal's Triangle
 119: Pascal's Triangle II
 139: Word Break
@@ -26,6 +27,9 @@
 198: House Robber
 202: Happy Number
 203: Remove Linked List Elements
+205: Isomorphic Strings
+206: Reverse Linked List
 212: Word Search II
 213: House Robber II
 215: Kth Largest Element in an Array
+217: Contains Duplicate
