@@ -1,5 +1,6 @@
 2:   Add Two Numbers
 3:   Longest Substring Without Repeating Characters
+5:   Longest Palindromic Substring
 7:   Reverse Integer
 9:   Palindrome Number
 11:  Container With Most Water
@@ -19,8 +20,12 @@
 118: Pascal's Triangle
 119: Pascal's Triangle II
 139: Word Break
+150: Evaluate Reverse Polish Notation
 153: Find Minimum in Rotated Sorted Array
+171: Excel Sheet Column Number
 198: House Robber
+202: Happy Number
+203: Remove Linked List Elements
 212: Word Search II
 213: House Robber II
 215: Kth Largest Element in an Array
