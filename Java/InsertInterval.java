@@ -23,8 +23,8 @@ public class Solution {
                 CollectionOfMergedIntervals.add(currentInterval);
             }
             else if(currentInterval.start > newInterval.end){//The current interval is completely after the new interval.
-                if(!mergedNewIntervalYet){// Merge the overplaing intervals and then add it to the list.
-                    mergedNewIntervalYet = true;
+                if(!mergedNewIntervalYet){// Add the newinterval joined with any overplaing intervals to the list.
+                    mergedNewIntervalYet = true;//Remeber not to add it multiple times
                     CollectionOfMergedIntervals.add(newInterval);
                 }
                 CollectionOfMergedIntervals.add(currentInterval);
