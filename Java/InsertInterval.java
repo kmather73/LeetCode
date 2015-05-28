@@ -9,61 +9,33 @@
  */
 public class Solution {
     public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
-        List<Interval> merged = new ArrayList<Interval>();
-        if(intervals == null || intervals.size() == 0){
-            merged.add(newInterval);
-            return merged;
+        List<Interval> CollectionOfMergedIntervals = new ArrayList<Interval>();
+        
+        if(intervals == null || intervals.size() == 0){//Edge case we have nothing to merge with.
+            CollectionOfMergedIntervals.add(newInterval);
+            return CollectionOfMergedIntervals;
         }
         
-        boolean flag = false;//flag to now when we have merged the intervals.
+        boolean mergedNewIntervalYet = false;//flag to know when we have merged the intervals.
         
-        for(Interval currInt : intervals){
-            if(currInt.end < newInterval.start){//The current interval is completely before the new interval so add to the list.
-                merged.add(currInt);
+        for(Interval currentInterval : intervals){
+            if(currentInterval.end < newInterval.start){//The current interval is completely before the new interval so add it to the list
+                CollectionOfMergedIntervals.add(currentInterval);
             }
-            else if(currInt.start > newInterval.end){//The current interval is completely after the new interval.
-                if(!flag){// Merge the overplaing intervals and then add to the list.
-                    flag = true;
-                    merged.add(newInterval);
+            else if(currentInterval.start > newInterval.end){//The current interval is completely after the new interval.
+                if(!mergedNewIntervalYet){// Merge the overplaing intervals and then add it to the list.
+                    mergedNewIntervalYet = true;
+                    CollectionOfMergedIntervals.add(newInterval);
                 }
-                merged.add(currInt);
+                CollectionOfMergedIntervals.add(currentInterval);
             }
             else{//The current interval and the new interval overlap
-                newInterval.start = Math.min(newInterval.start, currInt.start);// update the staring point.
-                newInterval.end = Math.max(newInterval.end, currInt.end);//update the ending point.
+                newInterval.start = Math.min(newInterval.start, currentInterval.start);// update the staring point.
+                newInterval.end = Math.max(newInterval.end, currentInterval.end);//update the ending point.
             }
         }
-        if(!flag)//Merge the overplaing intervals and then add to the list if still needed.
-            merged.add(newInterval);
-        return merged;
+        if(!mergedNewIntervalYet)//Merge the overplaing intervals and then add to the list if still needed.
+            CollectionOfMergedIntervals.add(newInterval);
+        return CollectionOfMergedIntervals;
     }
 }
-
-
-
-//Cleaner version but less optimized
-public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
-        List<Interval> merged = new ArrayList<Interval>();
-        if(intervals == null || intervals.size() == 0){
-            merged.add(newInterval);
-            return merged;
-        }
-        
-        int insertPos = 0;
-
-        for(Interval currInt : intervals){
-            if(currInt.end < newInterval.start){//The current interval is completely before the new interval so add to the list.
-                merged.add(currInt);
-                ++insertPos;
-            }
-            else if(currInt.start > newInterval.end){//The current interval is completely after the new interval.
-                merged.add(currInt);
-            }
-            else{//The current interval and the new interval overlap
-                newInterval.start = Math.min(newInterval.start, currInt.start);// update the staring point.
-                newInterval.end = Math.max(newInterval.end, currInt.end);//update the ending point.
-            }
-        }
-        merged.add(insertPos,newInterval);//Merge the overplaing intervals and add to the list at the right position.
-        return merged;
-    }
