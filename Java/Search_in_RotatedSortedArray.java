@@ -5,27 +5,7 @@ public class Solution {
 
         Coordinates.setOriginAndRange(startingPoint, range);
         
-        return binarySearchInNewCoordinates(nums, startingPoint, target);
-    }
-    
-    public int binarySearchInNewCoordinates(int[] nums, int startingPoint, int target){
-        int startIndex = startingPoint;
-        int endIndex = (nums.length + startingPoint - 1) % nums.length;
-        
-        while(startIndex != endIndex){
-            int midPointInNewCoord =  Coordinates.midPointInNewCoordinates(startIndex,endIndex);
-            
-            if(nums[midPointInNewCoord] == target){
-                return midPointInNewCoord;
-            }
-            else if(nums[midPointInNewCoord] < target){
-                startIndex = (midPointInNewCoord + 1) % nums.length;
-            }
-            else{
-                endIndex = midPointInNewCoord;
-            }
-        }
-        return nums[startIndex] == target ? startIndex : -1;
+        return Coordinates.binarySearch(nums, target);
     }
     
     public int findStartingPoint(int[] num) {
@@ -80,6 +60,26 @@ public class Solution {
             }
             midPoint = midPoint /  2;
             return midPoint % range;
+        }
+     
+        public static int binarySearch(int[] nums, int target){
+           int startIndex = origin;
+            int endIndex = (range + origin - 1) % range;
+        
+            while(startIndex != endIndex){
+                int midPointInNewCoord =  midPointInNewCoordinates(startIndex,endIndex);
+            
+                if(nums[midPointInNewCoord] == target){
+                    return midPointInNewCoord;
+                }
+                else if(nums[midPointInNewCoord] < target){
+                    startIndex = (midPointInNewCoord + 1) % range;
+                }
+                else{
+                    endIndex = midPointInNewCoord;
+                }
+            }
+            return nums[startIndex] == target ? startIndex : -1;
         }
     }
 }
