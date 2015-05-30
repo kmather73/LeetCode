@@ -20,12 +20,12 @@ public class Solution {
         while(indexA > 0){//Add what is left of the number a if needed.
             int temp = carry + (a.charAt(--indexA) - '0');
             carry = temp / 2;
-            add[--maxSize] = (char)  (temp%2+'0');
+            add[--maxSize] = (char)  (temp % 2+'0');
         }
         while(indexB > 0){//Add what is left of the number b if needed
             int temp = carry + ( b.charAt(--indexB) - '0');
             carry = temp / 2;
-            add[--maxSize] = (char) (temp%2 +'0');
+            add[--maxSize] = (char) (temp % 2 +'0');
         }
         String added = new String(add);
         if(carry == 1){//don't forget about the last carry.
@@ -41,8 +41,12 @@ public class Solution {
         int indexA = a.length(), indexB = b.length(), carry = 0;
         while (indexA > 0 || indexB > 0) {
             int sum = carry;
-            if (indexB > 0) sum += b.charAt(--indexB) - '0';
-            if (indexA > 0) sum += a.charAt(--indexA) - '0';
+            if (indexB > 0){
+                sum += b.charAt(--indexB) - '0';
+            }
+            if (indexA > 0){
+                sum += a.charAt(--indexA) - '0';
+            }
             sb.append(sum % 2);
             carry = sum / 2;
         }
