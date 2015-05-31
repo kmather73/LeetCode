@@ -29,18 +29,20 @@ public class Solution {
             return head;
         }
         
-        ListNode newHead = head.next;
-        ListNode swapWith = head.next;
-        ListNode tempData;
+        ListNode newHead = new ListNode(0);
+        ListNode previous = newHead;
         
-        while(swapWith.next != null){
-            temp = swapWith.next;
+        ListNode swapWith;
+        
+        while(head != null && head.next != null){
+            swapWith = head.next;
+            head.next = head.next.next;
             swapWith.next = head;
-            head.next = temp;
+            
+            previous.next = swapWith;
+            previous = head;
             
             head = head.next;
-            swapWith = head.next;
         }
-        
-        return newHead;
+        return newHead.next;
     }
