@@ -23,10 +23,12 @@
 56:  Merge Intervals
 57:  Insert Interval
 58:  Length of Last Word
+63:  Unique Paths
 63:  Unique Paths II
 66:  Plus One
 67:  Add Binary
 70:  Climbing Stairs
+73:  Set Matrix Zeroes
 74:  Search a 2D Matrix
 78:  Subsets
 79:  Word Search
@@ -34,18 +36,22 @@
 86:  Partition List
 88:  Merge Sorted Array
 90:  Subsets II
+92:  Reverse Linked List II
 94:  Binary Tree Inorder Traversal
 98:  Validate Binary Search Tree
 100: Same Tree
 101: Symmetric Tree
 102: Binary Tree Level Order Traversal
 104: Maximum Depth of Binary Tree
+108: Convert Sorted Array to Binary Search Tree
+109: Convert Sorted List to Binary Search Tree
 118: Pascal's Triangle
 119: Pascal's Triangle II
 136: Single Number
 139: Word Break
 150: Evaluate Reverse Polish Notation
 153: Find Minimum in Rotated Sorted Array
+160: Intersection of Two Linked Lists
 168: Excel Sheet Column Title
 171: Excel Sheet Column Number
 198: House Robber
