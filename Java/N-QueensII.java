@@ -1,3 +1,93 @@
+//Now only uses O(n) memory instead of O(n^2) memory. Made the mechanism to test if a position in open much simpler.
+
+public class Solution {
+    public int totalNQueens(int size) {
+        Board myQueens = new Board(size);
+        solveQueenUtill(myQueens, 0);
+        return myQueens.numberOfpossibleMoves();
+    }
+    public void solveQueenUtill(Board myBoard, int colNum){
+        if(colNum >= myBoard.size()){//Base case, no more columns left to place a queen.
+            return;
+        }
+        for(int row = 0; row < myBoard.size(); ++row){
+            if(myBoard.validMove(row, colNum)){
+                myBoard.placeQueenAt(row, colNum);
+                solveQueenUtill(myBoard, colNum + 1);
+                myBoard.removeQueenAt(row, colNum);
+            }
+        }
+        return;
+    }
+    
+    public class Board{
+        private int sizeOfBoard;
+        private boolean[] attackLeftDiag;
+        private boolean[] attackRightDiag;
+        private int numberOfQueensPlaced;
+        private int numberOfValidConfigOfQueens;
+        
+        public Board(int n){
+            attackLeftDiag = new boolean[2*n - 1];
+            attackRightDiag = new boolean[2*n - 1];
+            attackSide = new boolean[n];
+            
+            numberOfQueensPlaced = 0;
+            numberOfValidConfigOfQueens = 0;
+            sizeOfBoard = n;
+        }
+        
+        public boolean validMove(int row, int col){
+            int left = row + col;
+            int right = sizeOfBoard - 1  - row + col;
+            
+            return !attackRightDiag[right] && !attackLeftDiag[left] && !attackSide[row];
+        }
+        
+        public void placeQueenAt(int row, int col){
+            numberOfQueensPlaced++;
+            
+            attackSide[row] = true;
+            
+            int left = row + col;
+            attackLeftDiag[left] = true;
+            
+            int right = sizeOfBoard - 1  - row + col;
+            attackRightDiag[right] = true;
+            
+            if(numberOfQueensPlaced == sizeOfBoard){
+                addConfigToCount();
+            }
+        }
+        
+        public void removeQueenAt(int row, int col){
+            --numberOfQueensPlaced;
+            
+            attackSide[row] = false;
+            
+            int left = row + col;
+            attackLeftDiag[left] = false;
+            
+            int right = sizeOfBoard - 1  - row + col;
+            attackRightDiag[right] = false;
+        }
+        
+        private void addConfigToCount(){
+            ++numberOfValidConfigOfQueens;
+        }
+        public int numberOfpossibleMoves(){
+            return numberOfValidConfigOfQueens;
+        }
+        public int size(){
+            return sizeOfBoard;
+        }
+    }
+}
+
+
+
+
+//Old Version, was able to make it better in many ways.
 public class Solution {
     public class Board{
         private int sizeOfBoard;
