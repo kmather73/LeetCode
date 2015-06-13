@@ -1,3 +1,125 @@
+//Was able to make it run faster by better under the constraint satisfaction problem of the N-Queens and was bale to save a lot of space.
+//Runs in O(???) time and uses O(n^2) memory, the bottle neck for the memory is the possible config's of the board.
+public class Solution {
+    public List<String[]> solveNQueens(int size) {
+        Board myQueens = new Board(size);
+        solveQueenUtill(myQueens, 0);
+        return myQueens.possibleMoves();
+    }
+    
+    public void solveQueenUtill(Board myBoard, int colNum){
+        if(colNum >= myBoard.size()){//Base case, no more columns left to place a queen.
+            return;
+        }
+        for(int row = 0; row < myBoard.size(); ++row){
+            if(myBoard.validMove(row, colNum)){
+                myBoard.placeQueenAt(row, colNum);
+                solveQueenUtill(myBoard, colNum + 1);
+                myBoard.removeQueenAt(row, colNum);
+            }
+        }
+        return;
+    }
+    
+    public class Board{
+        private int sizeOfBoard;
+        private boolean[] attackLeftDiag;
+        private boolean[] attackRightDiag;
+        private boolean[] attackSide;
+        private int[] rowUsedByColNumber;
+        private int numberOfQueensPlaced;
+        private List<String[]> validConfigOfQueens;
+        private String[] QueenInRow;//A list of all the possible positions a queen could be in, in any row.
+        
+        public Board(int n){
+            attackLeftDiag = new boolean[2*n - 1];
+            attackRightDiag = new boolean[2*n - 1];
+            attackSide = new boolean[n];
+            
+            sizeOfBoard = n;
+            numberOfQueensPlaced = 0;
+            
+            rowUsedByColNumber = new int[n];
+            validConfigOfQueens = new ArrayList<String[]>();
+            QueenInRow = generatePositions();
+        }
+        
+        private String[] generatePositions(){
+            String[] possiblePositions = new String[sizeOfBoard];
+            
+            for(int i = 0; i < sizeOfBoard; ++i){
+                char[] nextString = new char[sizeOfBoard];
+                for(int j = 0; j < sizeOfBoard; ++j){
+                    if(i != j){
+                        nextString[j] = '.';
+                    }
+                    else{
+                        nextString[j] = 'Q';
+                    }
+                }
+                possiblePositions[i] = new String(nextString);
+            }
+            return possiblePositions;
+        }
+        
+        public boolean validMove(int row, int col){
+            int left = row + col;
+            int right = sizeOfBoard - 1  - row + col;
+            
+            return !attackRightDiag[right] && !attackLeftDiag[left] && !attackSide[row];
+        }
+        
+        public void placeQueenAt(int row, int col){
+            numberOfQueensPlaced++;
+            rowUsedByColNumber[col] = row + 1;
+            
+            attackSide[row] = true;
+            
+            int left = row + col;
+            attackLeftDiag[left] = true;
+            
+            int right = sizeOfBoard - 1  - row + col;
+            attackRightDiag[right] = true;
+            
+            if(numberOfQueensPlaced == sizeOfBoard){
+                addConfigToList();
+            }
+        }
+
+        public void removeQueenAt(int row, int col){
+            --numberOfQueensPlaced;
+            rowUsedByColNumber[col] = 0;
+            
+            attackSide[row] = false;
+            
+            int left = row + col;
+            attackLeftDiag[left] = false;
+            
+            int right = sizeOfBoard - 1  - row + col;
+            attackRightDiag[right] = false;
+        }
+
+        private void addConfigToList(){
+            String[] conf = new String[sizeOfBoard];
+            for(int i = 0; i < sizeOfBoard; ++i){
+                conf[i] = QueenInRow[rowUsedByColNumber[i]-1];
+            }
+            validConfigOfQueens.add(conf);
+        }
+        
+        public List<String[]> possibleMoves(){
+            return validConfigOfQueens;
+        }
+        
+        public int size(){
+            return sizeOfBoard;
+        }
+    }
+}
+
+
+
+//old Version 
 public class Solution {
     public class Board{
         private int sizeOfBoard;
