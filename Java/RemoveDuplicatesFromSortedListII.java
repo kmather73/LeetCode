@@ -4,22 +4,22 @@
           return head;
       }
       
-      ListNode p = head;
-      ListNode q = new ListNode(0);
-      head = q;
+      ListNode current = head;
+      ListNode previous = new ListNode(0);
+      head = previous;
       
-      while(p != null && p.next != null){
-          if(p.val == p.next.val){
-              int next = p.next.val;
-              while(p != null && p.val == next){
-                  p = p.next;
+      while(current != null && current.next != null){
+          if(current.val == current.next.val){
+              int next = current.next.val;
+              while(current != null && current.val == next){
+                  current = current.next;
               }
-              q.next = p;
+              previous.next = current;
           }
           else{
-              q.next = p;
-              q = p;
-              p = p.next;
+              previous.next = current;
+              previous = current;
+              current = current.next;
           }
       }
       return head.next;
