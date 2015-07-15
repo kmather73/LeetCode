@@ -33,11 +33,14 @@
 78:  Subsets
 79:  Word Search
 80:  Remove Duplicates from Sorted Array II
+82:  Remove Duplicates from Sorted List II
+83:  Remove Duplicates from Sorted List I
 86:  Partition List
 88:  Merge Sorted Array
 90:  Subsets II
 92:  Reverse Linked List II
 94:  Binary Tree Inorder Traversal
+96:  Unique Binary Search Trees
 98:  Validate Binary Search Tree
 100: Same Tree
 101: Symmetric Tree
@@ -55,6 +58,8 @@
 160: Intersection of Two Linked Lists
 168: Excel Sheet Column Title
 171: Excel Sheet Column Number
+174: Dungeon Game
+190: Reverse Bits
 198: House Robber
 199: Binary Tree Right Side View
 202: Happy Number
@@ -69,3 +74,7 @@
 220: Contains Duplicate III
 222: Count Complete Tree Nodes
 223: Rectangle Area
+226: Invert Binary Tree
+231: Power of Two
+234: Palindrome Linked List
+236: Delete Node in a Linked List
