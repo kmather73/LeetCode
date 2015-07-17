@@ -50,7 +50,9 @@
 109: Convert Sorted List to Binary Search Tree
 118: Pascal's Triangle
 119: Pascal's Triangle II
+120: Triangle
 121: Best Time to Buy and Sell Stock
+125: Valid Palindrome
 136: Single Number
 139: Word Break
 150: Evaluate Reverse Polish Notation
@@ -58,7 +60,9 @@
 160: Intersection of Two Linked Lists
 168: Excel Sheet Column Title
 171: Excel Sheet Column Number
+172: Factorial Trailing Zeroes
 174: Dungeon Game
+189: Rotate Array
 190: Reverse Bits
 198: House Robber
 199: Binary Tree Right Side View
@@ -77,4 +81,6 @@
 226: Invert Binary Tree
 231: Power of Two
 234: Palindrome Linked List
-236: Delete Node in a Linked List
+236: Lowest Common Ancestor of a Binary Search Tree
+237: Delete Node in a Linked List
+238: Product of Array Except Self
