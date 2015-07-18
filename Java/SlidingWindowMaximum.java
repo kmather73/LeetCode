@@ -23,7 +23,7 @@ public class Solution {
             }
         }
         int position = 0;
-        maxList[position++] = myQueue.peekFirst().val;
+        maxList[position] = myQueue.peekFirst().val;
         int upperLimit = nums.length;
         for(int i = k; i < upperLimit ; ++i){
             temp = nums[i];
@@ -43,7 +43,7 @@ public class Solution {
                     myQueue.addLast( new Tuple(temp, i)  );
                 }
             }
-            maxList[position++] = myQueue.peekFirst().val;
+            maxList[++position] = myQueue.peekFirst().val;
         }
         
         return maxList;
