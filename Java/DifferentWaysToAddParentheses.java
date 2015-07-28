@@ -14,6 +14,20 @@ public class Solution {
             possibleNums.add(nums.get(numsBegin));
             return possibleNums;   
         }
+        /* Add this part and move the above case into the calling function for a speed up.
+        *if(numsBegin + 1 == numsEnd){
+        *    int temp = nums.get(numsBegin);
+        *    char c = ops.get(numsBegin);
+        *    if( c== '+')
+        *        temp += nums.get(numsEnd);
+        *    else if(c == '-')
+        *        temp -= nums.get(numsEnd);
+        *    else
+        *        temp *= nums.get(numsEnd);
+        *   possibleNums.add(temp);
+        *    return possibleNums;
+        *}
+        */
         
         for(int i = numsBegin; i < numsEnd; ++i){
             List<Integer> leftSide = diffWaysUtill( ops, nums, numsBegin, i);
