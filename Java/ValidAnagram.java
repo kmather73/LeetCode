@@ -6,22 +6,19 @@ public class Solution {
         if(lengthOfS != lengthOfT)
             return false;
         
-        HashMap<Character, Integer> countsOfCharsInS = new HashMap<Character, Integer>();
         
+        int[] countsOfCharsInS = new int[26];
         for(int i = 0; i < lengthOfS; ++i){
             char c = s.charAt(i);
-            if(countsOfCharsInS.containsKey(c))
-                countsOfCharsInS.put(c, 1 + countsOfCharsInS.get(c));
-            else
-                countsOfCharsInS.put(c,1);
+            ++countsOfCharsInS[c - 'a'];
         }
         
         for(int i = 0; i < lengthOfT; ++i){
             char c = t.charAt(i);
-            if(!countsOfCharsInS.containsKey(c) || countsOfCharsInS.get(c) == 0)
+            if(countsOfCharsInS[c - 'a'] == 0)
                 return false;
-            else
-                countsOfCharsInS.put(c, countsOfCharsInS.get(c) - 1);
+            
+            --countsOfCharsInS[c - 'a'];
         }
         return true;
     }
