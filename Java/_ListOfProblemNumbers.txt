@@ -47,6 +47,7 @@
 83:  Remove Duplicates from Sorted List I
 86:  Partition List
 88:  Merge Sorted Array
+89:  Gray Code
 90:  Subsets II
 92:  Reverse Linked List II
 94:  Binary Tree Inorder Traversal
@@ -72,6 +73,7 @@
 121: Best Time to Buy and Sell Stock
 125: Valid Palindrome
 129: Sum Root to Leaf Numbers
+135: Candy
 136: Single Number
 139: Word Break
 141: Linked List Cycle
@@ -115,3 +117,4 @@
 238: Product of Array Except Self
 239: Sliding Window Maximum
 241: Different Ways to Add Parentheses
+242: Valid Anagram
