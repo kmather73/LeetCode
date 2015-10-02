@@ -7,8 +7,8 @@ public class Solution {
         slow = nums[slow];
         fast = nums[nums[fast]];
         
-        if(slow == fast)
-            break;
+            if(slow == fast)
+                break;
         }
         
         fast = 0;
