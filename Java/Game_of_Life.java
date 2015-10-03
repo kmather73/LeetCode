@@ -12,7 +12,7 @@ public class Solution {
                     if(dir[0] + i < 0 || dir[0] + i >= board.length || dir[1] + j < 0 || dir[1] + j >= board[0].length) 
                         continue;
                     
-                    if(board[dir[0]+i][dir[1]+j] == 1 || board[dir[0]+i][dir[1]+j] == 2)
+                    if(board[dir[0]+i][dir[1]+j] >= 1)
                         ++live;
                 }
         
