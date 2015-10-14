@@ -2,16 +2,16 @@ class Solution {
 public:
     int numTrees(int n) {
         
-        vector<int> myNumTrees(n + 1, 0)
-        myNumTrees[0] = 1;
-        myNumTrees[1] = 1;
+        vector<int> numOfTrees(n + 1, 0)
+        numOfTrees[0] = 1;
+        numOfTrees[1] = 1;
         
         for(int i = 1; i <=n; ++i){
             int sum = 0;
             for(int j = 0; j < i; ++j)
-                sum += myNumTrees[j]*myNumTrees[i-j-1];
-            myNumTrees[i] = sum;
+                sum += numOfTrees[j] * numOfTrees[i-j-1];
+            numOfTrees[i] = sum;
         }
-        return myNumTrees[n];
+        return numOfTrees[n];
     }
 };
