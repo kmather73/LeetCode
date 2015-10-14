@@ -47,7 +47,7 @@ class Solution {
             l2 = l2->next;
         }
 
-        if (carry != 0) {
+        if (carry) {
             ListNode *node = new ListNode(carry);
             p->next = node;
             p = p->next;
