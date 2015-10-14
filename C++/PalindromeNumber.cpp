@@ -11,9 +11,9 @@ public:
         
         while(x && firstDigit == lastDigit){
             lastDigit = x % 10;
-            firstDigit = x/power;
-            x = (x%power)/10;
-            power /=100;
+            firstDigit = x / power;
+            x = (x % power) / 10;
+            power /= 100;
         }
         
         return x == 0 && firstDigit == lastDigit;
