@@ -1,16 +1,11 @@
-//Time limit error on the last test case.
 public class NumArray {
     ArrayList<ArrayList<Integer>> levelSums;
-    int leftSums[];
-    int logSize;
     
     public NumArray(int[] nums)  {
         levelSums = new ArrayList<ArrayList<Integer>>();
-
-
+        int logSize = 0;
         for (int i = nums.length; i > 0; i /= 2)
             ++logSize;
-        //--logSize;
 
         ArrayList<Integer> currLevel = new ArrayList<Integer>();
         int limit = 1<<logSize;
@@ -26,9 +21,8 @@ public class NumArray {
         for (int i = logSize; i >= 1; --i) {
             currLevel = new ArrayList<Integer>();
             int prevLevel = levelSums.size() - 1;
-            System.out.println(levelSums.get(prevLevel));
-            limit = 1<<i;
-            for (int j = 0; 2*j < limit; ++j) {
+            limit = 1<<(i-1);
+            for (int j = 0; j < limit; ++j) {
                 currLevel.add(levelSums.get(prevLevel).get(2 * j) + levelSums.get(prevLevel).get(2 * j + 1));
             }
             levelSums.add(currLevel);
@@ -40,27 +34,28 @@ public class NumArray {
 
         for (int j = 0; j < levelSums.size(); ++j) {
             levelSums.get(j).set(i, levelSums.get(j).get(i) + diff);
-            i = i/2;
+            i = i>>1;
         }
     }
 
     public int sumRange(int i, int j) {
-        return leftSum(j) - leftSum(i-1);
+        return leftSum(j) - leftSum(i - 1);
     }
 
     public int leftSum(int num) {
         int sum = 0;
         if (num >= 0) {
             int offset = 0;
+            int size = levelSums.size() - 1;
             ++num;
             do {
                 while((num&1) == 0 && num > 1) {
-                    num /= 2;
+                    num >>= 1;
                     ++offset;
                 }
 
                 sum += levelSums.get(offset).get(num-1);
-                num /= 2;
+                num >>= 1;
                 ++offset;
             }while(num > 0);
         }
