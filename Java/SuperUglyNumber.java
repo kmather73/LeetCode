@@ -7,7 +7,7 @@ public class Solution {
         int[] uglyNums = new int[n];
         uglyNums[0] = 1;
         
-        for(int i = 1; i < n; ){
+        for(int i = 1; i < n; ++i){
             int min = uglyNums[indexs[0]]*primes[0];
             int minIndex = 0;
             
@@ -21,10 +21,12 @@ public class Solution {
                 
             }
             uglyNums[i] = min;
-            ++indexs[minIndex];
+            for(int j = 0; j < primes.length; ++j){
+                if(uglyNums[indexs[j]]*primes[j] == min)
+                    ++indexs[j];
+            }
             
-            if(uglyNums[i] != uglyNums[i-1])
-                ++i;
+
         }
         return uglyNums[n-1];
     }
