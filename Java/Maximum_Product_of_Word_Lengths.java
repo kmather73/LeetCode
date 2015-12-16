@@ -1,5 +1,35 @@
 public class Solution {
     public int maxProduct(String[] words) {
+        int[] bitSet = new int[words.length];
+        int max = 0;
+        for(int i = words.length-1; i >= 0; --i){
+           bitSet[i] = giveSigniture(words[i]); 
+        
+            for(int j = words.length-1; j > i; --j)
+                if((bitSet[i]&bitSet[j]) == 0)
+                    max = Math.max(max, words[i].length()* words[j].length());
+        }
+        return max;
+    }
+    
+    /* Give a bit signiture to each word. 
+     * Have bit i set to 1 if the i'th letter in the alphabet appears in the word and 0 otherwise
+     */
+    public int giveSigniture(String str){
+        int sig = 0;
+        for(int i = str.length()-1; i >= 0; --i){
+            int mask = 1<<(str.charAt(i) - 'a');
+            
+            sig |= mask;
+        }
+        return sig;
+    }
+}
+
+
+/* Below is a good theoretical solution*/
+public class Solution {
+    public int maxProduct(String[] words) {
         HashMap<Integer, Double> table = new HashMap<Integer, Double>();
         table.put(0, -1.0);
         
