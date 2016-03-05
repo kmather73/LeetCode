@@ -1,7 +1,7 @@
-//Time limit error Adj matrix graph
 public class Solution {
     public int[] findOrder(int numCourses, int[][] prerequisites) {
         int n = numCourses;
+
         int[][] graph = new int[n][n];
         
         for(int i=0; i<prerequisites.length; ++i) {
