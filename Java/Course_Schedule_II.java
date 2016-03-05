@@ -6,7 +6,7 @@ public class Solution {
         
         for(int i=0; i<prerequisites.length; ++i) {
             int x = prerequisites[i][0];  // next class
-            int y = prerequisites[i][1];  // prere class
+            int y = prerequisites[i][1];  // prev class
             
             graph[y][x] = 1; // y -> x
         }
