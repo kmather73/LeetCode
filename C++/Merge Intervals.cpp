@@ -1,5 +1,3 @@
-//TLE
-
 /**
  * Definition for an interval.
  * struct Interval {
@@ -14,15 +12,15 @@
 class Solution {
 public:
     vector<Interval> merge(vector<Interval>& intervals) {
-        if(intervals.size() <= 1 || intervals.size() >= 100)
+        if(intervals.size() <= 1)
             return intervals;
             
         std::sort(intervals.begin(), intervals.end(), myfunction);
         std::vector<Interval> mergedIvals; 
         
-        int start, end, i;
+        int start, end;
         
-        for(i=0; i < intervals.size(); ){
+        for(int i = 0; i < intervals.size(); ){
             start = intervals[i].start;
             end = intervals[i].end;
             
@@ -31,21 +29,16 @@ public:
                 end = std::max(intervals[j].end, end);
                 ++j;
             }
-            
+           
             i = j;
             mergedIvals.push_back( Interval(start, end) );
         }
-        
         return mergedIvals;
         
     }
     
-    
     static bool myfunction (Interval i ,Interval j) { 
-        if ( i.start != j.start)
             return i.start < j.start;
-        else
-            return j.end <= i.end; 
         
     }
 };
