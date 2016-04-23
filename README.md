@@ -4,7 +4,7 @@
 
 ## Algorithms
 
-* [Arrays/Vectors Problems](https://github.com/kmather73/LeetCode#Arrays)
+* [Arrays/Vectors Problems](https://github.com/kmather73/LeetCode#arrays)
 * [Bit tricks](https://github.com/kmather73/LeetCode#BitTricks)
 * [Linked Lists](https://github.com/kmather73/LeetCode#LinkedLists)
 * [Trees/Graphs](https://github.com/kmather73/LeetCode#TreesGraphs)
