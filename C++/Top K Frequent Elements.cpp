@@ -18,7 +18,8 @@ public:
         
         
         std::vector<int> topK;
-        for(auto vec : counts){
+        for(int i = counts.size()-1; i >= 0; --i){
+            auto vec = counts[i];
             for(int ele: vec){
                 topK.push_back( ele );
                 if(topK.size() >= k)
