@@ -1,0 +1,46 @@
+class Triple {
+    public int a;
+    public int b;
+    public int c;
+    
+    public Triple(int x, int y, int z){
+        a=x; b=y; c=z;
+    }
+    
+}
+
+class myComparator implements Comparator<Triple>{
+    @Override
+    public int compare(Triple x, Triple y) {
+       return x.c - y.c;
+    }
+}
+
+public class Solution {
+    public List<int[]> kSmallestPairs(int[] nums1, int[] nums2, int k) {
+        ArrayList<int[]> kPairs = new ArrayList<>();
+        if (nums1==null || nums2==null || nums1.length ==0 || nums2.length ==0) 
+            return kPairs;
+        
+        int n = nums1.length;
+        int m = nums2.length;
+        k = Math.min(k , n*m);
+        PriorityQueue<Triple> queue = 
+            new PriorityQueue<Triple>(16, new myComparator());
+            
+        for(int i = 0; i < m && i < k; ++i)
+            queue.add(new Triple(0,i, nums1[0]+nums2[i]));
+            
+        while( !queue.isEmpty() && kPairs.size() < k){
+            Triple temp = queue.poll();
+            int i = temp.a;
+            int j = temp.b;
+            kPairs.add( new int[]{ nums1[i], nums2[j] });
+            
+            if(i+1 < n){
+                queue.add(new Triple(i+1, j, nums1[i+1]+nums2[j]));
+            }
+        }
+        return kPairs;
+    }
+}
