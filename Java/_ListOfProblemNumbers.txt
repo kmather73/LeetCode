@@ -36,8 +36,10 @@
 61:  Rotate List
 62:  Unique Paths
 63:  Unique Paths II
+65:  Valid Number
 66:  Plus One
 67:  Add Binary
+69:  Sqrt(x)
 70:  Climbing Stairs
 73:  Set Matrix Zeroes
 74:  Search a 2D Matrix
@@ -70,10 +72,13 @@
 112: Path Sum
 113: Path Sum II
 114: Flatten Binary Tree to Linked List
+116: Populating Next Right Pointers in Each Node
+117: Populating Next Right Pointers in Each Node II
 118: Pascal's Triangle
 119: Pascal's Triangle II
 120: Triangle
 121: Best Time to Buy and Sell Stock
+122: Best Time to Buy and Sell Stock II
 125: Valid Palindrome
 129: Sum Root to Leaf Numbers
 135: Candy
@@ -84,17 +89,20 @@
 143: Reorder List
 144: Binary Tree Preorder Traversal
 145: Binary Tree Postorder Traversal
+146: LRU Cache
 147: Insertion Sort List
 148: Sort List
 150: Evaluate Reverse Polish Notation
 152: Maximum Product Subarray
 153: Find Minimum in Rotated Sorted Array
+155: Min Stack
 160: Intersection of Two Linked Lists
 162: Find Peak Element
 168: Excel Sheet Column Title
 169: Majority Element
 171: Excel Sheet Column Number
 172: Factorial Trailing Zeroes
+173: Binary Search Tree Iterator
 174: Dungeon Game
 189: Rotate Array
 190: Reverse Bits
@@ -102,8 +110,10 @@
 198: House Robber
 199: Binary Tree Right Side View
 200: Number of Islands
+201: Bitwise AND of Numbers Range
 202: Happy Number
 203: Remove Linked List Elements
+204: Count Primes
 205: Isomorphic Strings
 206: Reverse Linked List
 212: Word Search II
@@ -124,12 +134,21 @@
 239: Sliding Window Maximum
 241: Different Ways to Add Parentheses
 242: Valid Anagram
+257: Binary Tree Paths
 258: Add Digits
 263: Ugly Number
+264: Ugly Number II
 268: Missing Number
 273: Integer to English Words
 274: H-Index
 275: H-Index II
 278: First Bad Version
 279: Perfect Squares
+280: Wiggle Sort
 283: Move Zeros
+287: Find the Duplicate Number
+289: Game of Life
+290: Word Pattern
+292: Nim Game
+295: Find Median from Data Stream
+299: Bulls and Cows
