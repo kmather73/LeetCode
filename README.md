@@ -6,10 +6,11 @@
 
 * [Arrays](https://github.com/kmather73/LeetCode#arrays)
 * [Bit tricks](https://github.com/kmather73/LeetCode#BitTricks)
-* [Dynamic Programing](https://github.com/kmather73/LeetCode#dynamic-Programing)
+* [Dynamic Programing](https://github.com/kmather73/LeetCode#dynamic-programing)
 * [Linked Lists](https://github.com/kmather73/LeetCode#LinkedLists)
 * [Trees/Graphs](https://github.com/kmather73/LeetCode#TreesGraphs)
-* [Stack](https://github.com/kmather73/LeetCode#Stack)
+* [Search](https://github.com/kmather73/LeetCode#search)
+* [Stack](https://github.com/kmather73/LeetCode#stack)
 * [Heap](https://github.com/kmather73/LeetCode#Array)
 * [Hash Tables](https://github.com/kmather73/LeetCode#Hash)
 
@@ -27,3 +28,10 @@
   #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Notes
 -----|---------------- | --------------- | --------------- | --------------- | ------------- | -----
 375   | [Guess Number Higher or Lower II](https://leetcode.com/problems/guess-number-higher-or-lower-ii/) | [C++](./C++/Guess Number Higher or Lower II.cpp) | _O(n^3)_       | _O(n^2)_          | Medium         |
+
+
+## Search
+  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Notes
+-----|---------------- | --------------- | --------------- | --------------- | ------------- | -----
+374   | [Guess Number Higher or Lower](https://leetcode.com/problems/guess-number-higher-or-lower/) | [C++](./C++/Guess Number Higher or Lower.cpp) | _O(log n)_       | _O(1)_          | Easy         |
+
