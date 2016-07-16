@@ -6,7 +6,7 @@
 
 * [Arrays](https://github.com/kmather73/LeetCode#arrays)
 * [Bit tricks](https://github.com/kmather73/LeetCode#BitTricks)
-* [Dynamic Programing](https://github.com/kmather73/LeetCode#dynamic Programing)
+* [Dynamic Programing](https://github.com/kmather73/LeetCode#dynamic-Programing)
 * [Linked Lists](https://github.com/kmather73/LeetCode#LinkedLists)
 * [Trees/Graphs](https://github.com/kmather73/LeetCode#TreesGraphs)
 * [Stack](https://github.com/kmather73/LeetCode#Stack)
