@@ -1,15 +1,15 @@
-# [LeetCode](https://leetcode.com/problemset/algorithms/) ![Language](https://img.shields.io/badge/language-Java/C/C++%2014-orange.svg)  ![Progress](https://img.shields.io/badge/progress-203%20%2F%20358-ff69b4.svg)
+# [LeetCode](https://leetcode.com/problemset/algorithms/) ![Language](https://img.shields.io/badge/language-Java/C/C++%2014-orange.svg)  ![Progress](https://img.shields.io/badge/progress-206%20%2F%20358-ff69b4.svg)
 (2016-07-16) This repository contains my working solutions to the problems found on [LeetCode](https://www.leetcode.com/problemset/algorithms/).
 
 
 ## Algorithms
 
 * [Arrays](https://github.com/kmather73/LeetCode#arrays)
-* [Bit tricks](https://github.com/kmather73/LeetCode#BitTricks)
+* [Bit Tricks](https://github.com/kmather73/LeetCode#bit-tricks)
 * [Design Patterns](https://github.com/kmather73/LeetCode#design-patterns)
 * [Dynamic Programing](https://github.com/kmather73/LeetCode#dynamic-programing)
 * [Linked Lists](https://github.com/kmather73/LeetCode#LinkedLists)
-* [Trees/Graphs](https://github.com/kmather73/LeetCode#TreesGraphs)
+* [Trees and Graphs](https://github.com/kmather73/LeetCode#trees-and-graphs)
 * [Search](https://github.com/kmather73/LeetCode#search)
 * [Stack](https://github.com/kmather73/LeetCode#stack)
 * [Strings](https://github.com/kmather73/LeetCode#strings)
@@ -26,6 +26,13 @@
 66   | [Plus one](https://leetcode.com/problems/plus-one/) | [C++](./C++/Plus One.cpp) / [Java](./Java/PlusOne.java) | _O(n)_       | _O(1)_          | Easy         |
 349  | [Valid Perfect Square](https://leetcode.com/problems/intersection-of-two-arrays/) | [C++](./C++/Valid Perfect Square.cpp) | _O(n)_ | _O(n)_ | Easy |
 350  | [Valid Perfect Square II](https://leetcode.com/problems/intersection-of-two-arrays-ii/) | [C++](./C++/Valid Perfect Square II.cpp) | _O(n)_ | _O(n)_ | Easy |
+
+
+## Bit Tricks
+  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Notes
+-----|---------------- | --------------- | --------------- | --------------- | ------------- | -----
+371  | [Sum of Two Integers](https://leetcode.com/problems/flatten-nested-list-iterator/) | [C++](c++/Sum of Two Integers.cpp) | _O(log n)_ | _O(1)_ | Easy | 
+
 
 ## Design Patterns
   #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Notes
@@ -61,3 +68,8 @@
 344  | [Reverse String](https://leetcode.com/problems/reverse-string/) | [Java](./Java/Reverse String.java) | _O( n )_  | _O(n)_          | Easy         |
 345  | [Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/) | [C++](./C++/Reverse Vowels of a String.cpp) | _O( n )_  | _O(n)_          | Easy         |
 
+
+## Trees and Graphs
+  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Notes
+-----|---------------- | --------------- | --------------- | --------------- | ------------- | -----
+133  | [Clone Graph](https://leetcode.com/problems/clone-graph/) | [C++](./C++/Clone Graph.cpp) | _O(V+E)_ | _O(V)_ |  Medium | BFS
