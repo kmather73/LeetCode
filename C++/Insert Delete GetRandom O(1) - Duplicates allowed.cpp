@@ -34,6 +34,7 @@ public:
                 if(findPos->second == elements.size()){
                     map.erase( findPos, std::next(findPos));
                     map.insert( make_pair(last, pos));
+                    break;
                 }
             }
         }
