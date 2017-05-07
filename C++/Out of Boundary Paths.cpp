@@ -5,7 +5,7 @@ int dy[4] = {1, -1, 0 ,0};
 public:
     long findPaths(int m, int n, int N, int i, int j) {
         int mod = (10E8) + 7;
-        vector<vector<vector<long>>> dp(m, vector<vector<long>>(n, vector<long>(N+1)));
+        vector<vector<vector<long>>> dp(m, vector<vector<long>>(n, vector<long>(2)));
         
         for(int i=0; i<m; ++i){
             ++dp[i][0][1];
@@ -21,18 +21,19 @@ public:
         for(int k=2; k<=N; ++k){
             for(int i=0; i<m; ++i){
                 for(int j=0; j<n; ++j){
+                    dp[i][j][k%2] = 0;
                     for(int t=0; t<4; ++t){
                         if(outOfBounds(m,n, i+dx[t], j+dy[t])){
-                            dp[i][j][k] = (dp[i][j][k]+1L) % mod;
+                            dp[i][j][k%2] = (dp[i][j][k%2]+1L) % mod;
                         } else {
-                            dp[i][j][k] = (dp[i][j][k] + dp[i+dx[t]][j+dy[t]][k-1]) % mod;
+                            dp[i][j][k%2] = (dp[i][j][k%2] + dp[i+dx[t]][j+dy[t]][(k-1)%2]) % mod;
                         }
                     }
                 }
             }
         }
         
-        return dp[i][j][N] % mod;
+        return dp[i][j][N%2] % mod;
     }
     
     bool outOfBounds(int m, int n, int i, int j){
