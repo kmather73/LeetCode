@@ -1,3 +1,5 @@
-SELECT id, name, salary,
-    CASE WHEN sex = 'f' THEN 'm' ELSE 'f' END AS sex
-    FROM salary
+UPDATE salary
+    SET sex  = (CASE WHEN sex = 'm' 
+        THEN  'f' 
+        ELSE 'm' 
+        END)
