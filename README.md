@@ -1,4 +1,4 @@
-# [LeetCode](https://leetcode.com/problemset/algorithms/) ![Language](https://img.shields.io/badge/language-Java/C/C++14/Python-orange.svg)  ![Progress](https://img.shields.io/badge/progress-316%20%2F%20604-ff69b4.svg)
+# [LeetCode](https://leetcode.com/problemset/algorithms/) ![Language](https://img.shields.io/badge/language-Java/C/C++14/Python-orange.svg)  ![Progress](https://img.shields.io/badge/progress-371%20%2F%20719-ff69b4.svg)
 (2017-06-22) This repository contains my working solutions to the problems found on [LeetCode](https://www.leetcode.com/problemset/algorithms/).
 
 
