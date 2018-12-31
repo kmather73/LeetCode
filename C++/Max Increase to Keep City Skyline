@@ -1,0 +1,29 @@
+class Solution {
+public:
+    int maxIncreaseKeepingSkyline(vector<vector<int>>& grid) {
+        int n = grid.size();
+        int m = grid[0].size();
+        vector<int> side(n);
+        vector<int> top(m);
+        for(int i=0; i < n; ++i)
+        {
+            for(int j=0; j < m; ++j)
+            {
+                side[i] = max(side[i], grid[i][j]);
+                top[j] = max(top[j], grid[i][j]);
+            }
+        }
+        
+        
+        int change = 0;
+        for(int i=0; i < n; ++i)
+        {
+            for(int j=0; j < m; ++j)
+            {
+                change += min(top[j], side[i]) - grid[i][j];
+            }
+        }
+        
+        return change;
+    }
+};
