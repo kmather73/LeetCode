@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int fib(int N) {
+        if(N == 0 || N == 1) return N;
+        
+        int fn = 1, fm1 = 0;
+        for(int i=1; i < N; ++i)
+        {
+            int tmp = fn;
+            fn += fm1;
+            fm1 = tmp;
+        }
+        
+        return fn;
+    }
+};
